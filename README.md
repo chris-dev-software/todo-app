@@ -1,8 +1,19 @@
-# React + Vite
+# TODO APP
+Application to practice react fundamentals.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<br>
 
-Currently, two official plugins are available:
+## Features 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- List tasks
+- Create task
+- Check task
+- Delete task
+- Search task
+
+## Technologies
+
+- JSX
+- JavaScript
+- Tailwimd
+- Vite
