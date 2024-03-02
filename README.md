@@ -1,8 +1,6 @@
 # TODO APP
 Application to practice react fundamentals.
 
-<br>
-
 ## Features 
 
 - List tasks
