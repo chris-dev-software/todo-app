@@ -1,19 +1,27 @@
 import React from 'react'
-import Header from './components/Header'
+
+import { Home } from './pages/Home'
+import { Routes, Route, BrowserRouter } from 'react-router-dom'
+import { Header } from './components/Header'
 import Options from './components/Options'
-import { RiAddCircleLine } from 'react-icons/ri'
+import { Completed } from './pages/Completed'
+import { Incompleted } from './pages/Incompleted'
+import { Create } from './pages/Create'
 
 function App () {
   return (
-    <div className='p-2'>
+    <BrowserRouter>
       <Header />
-      <main />
-      <Options />
-      <button>
-        <RiAddCircleLine className='text-4xl' />
-      </button>
-    </div>
 
+      <Routes>
+        <Route index element={<Home />} />
+        <Route path='/completed' element={<Completed />} />
+        <Route path='/incompleted' element={<Incompleted />} />
+        <Route path='/create' element={<Create />} />
+      </Routes>
+
+      <Options />
+    </BrowserRouter>
   )
 }
 

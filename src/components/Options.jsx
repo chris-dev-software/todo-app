@@ -1,21 +1,34 @@
-import React from 'react'
-import { RiCheckLine, RiCloseLine, RiHome2Line } from 'react-icons/ri'
+import {
+  RiHome2Line,
+  RiBookletLine,
+  RiListCheck,
+  RiFileCloseLine
+} from 'react-icons/ri'
+
+import { OptionItem } from './OptionItem'
 
 function Options () {
   return (
-    <footer className='fixed left-0 right-0 bottom-0 w-full grid grid-cols-3 max-w-xl mx-auto'>
-      <button className='text-sm flex flex-col sm:flex-row sm:gap-5 justify-center items-center p-2 cursor-pointer hover:bg-neutral-200 transition-colors'>
-        <RiCheckLine />
-        Complete
-      </button>
-      <button className='text-sm bg-teal-600 flex flex-col sm:flex-row sm:gap-5 justify-center items-center p-2 cursor-pointer transition-colors'>
-        <RiHome2Line />
-        Home
-      </button>
-      <button className='text-sm flex flex-col sm:flex-row sm:gap-5 justify-center items-center p-2 cursor-pointer hover:bg-neutral-200 transition-colors'>
-        <RiCloseLine />
-        Incomplete
-      </button>
+    <footer className='fixed left-0 right-0 bottom-0 w-full'>
+      <section className='grid grid-cols-4 justify-items-center items-center max-w-lg mx-auto p-5'>
+
+        <OptionItem linkTo='/completed' hoverText='completed'>
+          <RiListCheck className='text-3xl' />
+        </OptionItem>
+
+        <OptionItem linkTo='/' hoverText='Home'>
+          <RiHome2Line className='text-3xl' />
+        </OptionItem>
+
+        <OptionItem linkTo='/incompleted' hoverText='Incompleted'>
+          <RiFileCloseLine className='text-3xl' />
+        </OptionItem>
+
+        <OptionItem linkTo='/create' hoverText='Create'>
+          <RiBookletLine className='text-3xl' />
+        </OptionItem>
+
+      </section>
     </footer>
   )
 }

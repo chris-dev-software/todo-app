@@ -1,6 +1,4 @@
-import React from 'react'
-
-function Header () {
+export function Header () {
   return (
     <header className='max-w-xl mx-auto'>
       <h1 className='text-2xl text-center font-semibold mb-2'>You completed 4 to 5 tasks</h1>
@@ -19,5 +17,3 @@ function Header () {
     </header>
   )
 }
-
-export default Header
