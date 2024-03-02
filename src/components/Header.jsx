@@ -1,5 +1,4 @@
 import React from 'react'
-import { RiAddCircleLine } from 'react-icons/ri'
 
 function Header () {
   return (
@@ -17,9 +16,6 @@ function Header () {
         </button>
       </form>
 
-      <button>
-        <RiAddCircleLine className='text-4xl' />
-      </button>
     </header>
   )
 }
