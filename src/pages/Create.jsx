@@ -1,7 +1,9 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 
 export function Create ({ createNewTodo }) {
   const [title, setTitle] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -9,13 +11,14 @@ export function Create ({ createNewTodo }) {
     const newTodo = {
       id: crypto.randomUUID(),
       title,
-      createdAt: new Date().toLocaleDateString(),
+      createdAt: new Date().toLocaleString(),
       completed: false
     }
 
     createNewTodo(newTodo)
 
     setTitle('')
+    navigate('/')
   }
 
   return (

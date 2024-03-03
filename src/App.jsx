@@ -22,19 +22,70 @@ function App () {
     })
   }
 
+  const changeCompleteTask = (id) => {
+    setTodos(prevTodos => {
+      const newTodos = prevTodos.map(todo => {
+        if (todo.id !== id) return todo
+        todo.completed = !todo.completed
+        return todo
+      })
+      return newTodos
+    })
+  }
+
   const completedTodos = todos.filter(todo => todo.completed)
   const incompletedTodos = todos.filter(todo => !todo.completed)
 
+  const completedTodosLength = completedTodos.length
+  const allTodosLength = todos.length
+
   return (
     <BrowserRouter>
-      <Header />
+      <Header completedTodosLength={completedTodosLength} allTodosLength={allTodosLength} />
 
-      <main className='max-w-lg mx-auto p-5'>
+      <main className='max-w-lg mx-auto p-5 pb-[106px]'>
         <Routes>
-          <Route index element={<ContainerTodos deleteTodo={deleteTodo} todos={todos} />} />
-          <Route path='/completed' element={<ContainerTodos deleteTodo={deleteTodo} todos={completedTodos} />} />
-          <Route path='/incompleted' element={<ContainerTodos deleteTodo={deleteTodo} todos={incompletedTodos} />} />
-          <Route path='/create' element={<Create createNewTodo={createNewTodo} />} />
+          <Route
+            index
+            element={
+              <ContainerTodos
+                changeCompleteTask={changeCompleteTask}
+                deleteTodo={deleteTodo}
+                todos={todos}
+              />
+            }
+          />
+
+          <Route
+            path='/completed'
+            element={
+              <ContainerTodos
+                changeCompleteTask={changeCompleteTask}
+                deleteTodo={deleteTodo}
+                todos={completedTodos}
+              />
+            }
+          />
+
+          <Route
+            path='/incompleted'
+            element={
+              <ContainerTodos
+                changeCompleteTask={changeCompleteTask}
+                deleteTodo={deleteTodo}
+                todos={incompletedTodos}
+              />
+            }
+          />
+
+          <Route
+            path='/create'
+            element={
+              <Create
+                createNewTodo={createNewTodo}
+              />
+            }
+          />
         </Routes>
       </main>
       <Options />
