@@ -6,7 +6,7 @@ export function OptionItem ({ linkTo, hoverText, children }) {
     <NavLink
       to={linkTo}
       className={({ isActive }) => {
-        const defaultStyle = 'group relative p-2 rounded-lg'
+        const defaultStyle = 'group relative p-2 rounded-lg transition-colors duration-500'
         const activeStyle = isActive ? 'bg-teal-700 text-white' : 'bg-white text-black'
         return `${defaultStyle} ${activeStyle}`
       }}

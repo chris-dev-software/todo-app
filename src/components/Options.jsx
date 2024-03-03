@@ -7,12 +7,12 @@ import {
 
 import { OptionItem } from './OptionItem'
 
-function Options () {
+export function Options () {
   return (
     <footer className='fixed left-0 right-0 bottom-0 w-full'>
       <section className='grid grid-cols-4 justify-items-center items-center max-w-lg mx-auto p-5'>
 
-        <OptionItem linkTo='/completed' hoverText='completed'>
+        <OptionItem linkTo='/completed' hoverText='Completed'>
           <RiListCheck className='text-3xl' />
         </OptionItem>
 
@@ -32,5 +32,3 @@ function Options () {
     </footer>
   )
 }
-
-export default Options
