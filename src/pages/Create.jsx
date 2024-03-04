@@ -22,13 +22,13 @@ export function Create ({ createNewTodo }) {
   }
 
   return (
-    <form onSubmit={handleSubmit} className='bg-neutral-100 p-4 rounded-md'>
-      <h1 className='text-3xl mb-5'>Create a Task</h1>
+    <form onSubmit={handleSubmit} className='bg-white/5  p-4 rounded-md'>
+      <h1 className='text-3xl mb-5 text-center text-white'>Create a Task</h1>
 
-      <div className='flex flex-col mb-3'>
+      <div className='flex flex-col gap-1 mb-5'>
         <label
           htmlFor='title'
-          className='text-sm font-medium tracking-wider'
+          className='text-sm font-medium tracking-wider text-white'
         >Title:
         </label>
         <input
@@ -37,11 +37,11 @@ export function Create ({ createNewTodo }) {
           value={title}
           placeholder='Write a title'
           onChange={(e) => setTitle(e.target.value)}
-          className='outline-none border px-4 py-2 rounded-md'
+          className='outline-none border px-4 py-2 rounded-md bg-transparent border-neutral-700 focus:border-neutral-500 text-white placeholder:text-neutral-700'
         />
       </div>
 
-      <button className='text-white bg-teal-800 hover:bg-teal-900 transition-colors px-6 py-1 rounded-md'>Create</button>
+      <button className='outline-none rounded-md py-2 px-10 text-white bg-white/10 hover:bg-white/15 transition-colors ml-auto block'>Create</button>
     </form>
   )
 }

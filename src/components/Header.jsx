@@ -1,17 +1,23 @@
+import { RiSearch2Line } from 'react-icons/ri'
+
 export function Header ({ completedTodosLength, allTodosLength }) {
   return (
-    <header className='max-w-lg mx-auto p-5 sticky top-0 bg-white'>
-      <h1 className='text-2xl text-center font-semibold mb-2 text-neutral-700'>
-        You completed {completedTodosLength} to {allTodosLength} tasks
+    <header className='max-w-lg mx-auto p-5 sticky top-0 bg-black'>
+      <h1 className='text-2xl text-center uppercase font-semibold mb-2 flex flex-col text-white'>
+        <span>You completed</span>
+        <span>{completedTodosLength} to {allTodosLength} tasks</span>
       </h1>
 
       <form className='flex flex-col gap-2'>
-        <input
-          type='text'
-          placeholder='Busca la tarea'
-          className='outline-none border rounded-md px-3.5 py-2.5'
-        />
-        <button className='bg-teal-800 text-white px-3 py-2 rounded-md'>
+        <div className='flex items-center gap-2 text-neutral-700 border border-neutral-700 transition-colors rounded-md px-2 py-1 focus-within:border-neutral-500 focus-within:text-neutral-500'>
+          <RiSearch2Line className='text-xl' />
+          <input
+            type='text'
+            placeholder='Search...'
+            className='w-full outline-none bg-transparent text-white placeholder:text-neutral-700'
+          />
+        </div>
+        <button className='outline-none rounded-md p-2 text-white bg-white/10 hover:bg-white/15 transition-colors'>
           Buscar
         </button>
       </form>

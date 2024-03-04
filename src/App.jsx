@@ -41,54 +41,56 @@ function App () {
 
   return (
     <BrowserRouter>
-      <Header completedTodosLength={completedTodosLength} allTodosLength={allTodosLength} />
+      <div className='bg-black min-h-screen'>
+        <Header completedTodosLength={completedTodosLength} allTodosLength={allTodosLength} />
 
-      <main className='max-w-lg mx-auto p-5 pb-[106px]'>
-        <Routes>
-          <Route
-            index
-            element={
-              <ContainerTodos
-                changeCompleteTask={changeCompleteTask}
-                deleteTodo={deleteTodo}
-                todos={todos}
-              />
-            }
-          />
+        <main className='max-w-lg mx-auto p-5 pb-[106px]'>
+          <Routes>
+            <Route
+              index
+              element={
+                <ContainerTodos
+                  changeCompleteTask={changeCompleteTask}
+                  deleteTodo={deleteTodo}
+                  todos={todos}
+                />
+              }
+            />
 
-          <Route
-            path='/completed'
-            element={
-              <ContainerTodos
-                changeCompleteTask={changeCompleteTask}
-                deleteTodo={deleteTodo}
-                todos={completedTodos}
-              />
-            }
-          />
+            <Route
+              path='/completed'
+              element={
+                <ContainerTodos
+                  changeCompleteTask={changeCompleteTask}
+                  deleteTodo={deleteTodo}
+                  todos={completedTodos}
+                />
+              }
+            />
 
-          <Route
-            path='/incompleted'
-            element={
-              <ContainerTodos
-                changeCompleteTask={changeCompleteTask}
-                deleteTodo={deleteTodo}
-                todos={incompletedTodos}
-              />
-            }
-          />
+            <Route
+              path='/incompleted'
+              element={
+                <ContainerTodos
+                  changeCompleteTask={changeCompleteTask}
+                  deleteTodo={deleteTodo}
+                  todos={incompletedTodos}
+                />
+              }
+            />
 
-          <Route
-            path='/create'
-            element={
-              <Create
-                createNewTodo={createNewTodo}
-              />
-            }
-          />
-        </Routes>
-      </main>
-      <Options />
+            <Route
+              path='/create'
+              element={
+                <Create
+                  createNewTodo={createNewTodo}
+                />
+              }
+            />
+          </Routes>
+        </main>
+        <Options />
+      </div>
     </BrowserRouter>
   )
 }

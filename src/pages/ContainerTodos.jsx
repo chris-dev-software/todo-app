@@ -6,7 +6,7 @@ export function ContainerTodos ({ todos, deleteTodo, changeCompleteTask }) {
       {
         todos.length > 0
           ? <Todos todos={todos} deleteTodo={deleteTodo} changeCompleteTask={changeCompleteTask} />
-          : <p>No Tasks</p>
+          : <p className='text-white text-center text-4xl'>No Tasks</p>
       }
     </ul>
   )
