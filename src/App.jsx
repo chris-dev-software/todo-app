@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 import { ContainerTodos } from './pages/ContainerTodos'
 import { Routes, Route, BrowserRouter } from 'react-router-dom'
