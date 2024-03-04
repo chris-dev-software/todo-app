@@ -11,7 +11,7 @@ export function Create ({ createNewTodo }) {
     const newTodo = {
       id: crypto.randomUUID(),
       title,
-      createdAt: new Date().toLocaleString(),
+      createdAt: new Date().toLocaleDateString(),
       completed: false
     }
 
